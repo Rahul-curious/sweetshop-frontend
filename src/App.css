@@ -1,0 +1,220 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HTML & BODY FIX
+========================= */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   BODY & BACKGROUND
+========================= */
+body {
+  min-height: 100vh;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(168, 85, 247, 0.35),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom,
+      rgba(236, 72, 153, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #0b0216 0%,
+      #07010f 50%,
+      #040009 100%
+    );
+
+  color: #ffffff;
+}
+
+/* =========================
+   ROOT CONTAINER (FIXED)
+========================= */
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* =========================
+   MAIN CONTENT OFFSET
+========================= */
+main {
+  padding-top: 8rem; /* navbar spacing */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* =========================
+   GLASS NAVBAR
+========================= */
+.glass-navbar {
+  background: rgba(20, 8, 40, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  box-shadow:
+    0 10px 40px rgba(168, 85, 247, 0.25),
+    inset 0 0 20px rgba(255, 255, 255, 0.04);
+  transition: all 0.35s ease;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* =========================
+   HERO TITLE
+========================= */
+.hero-title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    #c084fc,
+    #f472b6,
+    #a855f7
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowMove 6s linear infinite;
+  text-shadow: 0 0 40px rgba(168, 85, 247, 0.35);
+}
+
+@keyframes glowMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+/* =========================
+   HERO SUBTITLE
+========================= */
+.hero-subtitle {
+  margin-top: 1.2rem;
+  max-width: 650px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-primary {
+  margin-top: 2rem;
+  padding: 14px 36px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    #9333ea,
+    #ec4899
+  );
+  color: white;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 45px rgba(236, 72, 153, 0.8);
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: rgba(20, 8, 40, 0.55);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f472b6;
+}
+
+/* =========================
+   PAGE FADE TRANSITION
+========================= */
+.page-fade {
+  animation: fadeSlide 0.4s ease-in-out;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   CUSTOM SCROLLBAR (DARK GLASS)
+========================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #9333ea,
+    #ec4899
+  );
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    #a855f7,
+    #f472b6
+  );
+}
