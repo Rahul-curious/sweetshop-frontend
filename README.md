@@ -1,16 +1,102 @@
-# React + Vite
+# 🍬 Sweet Shop Management System – Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the **backend API** for the Sweet Shop Management System, built using **Node.js, Express, MongoDB**, and **Test-Driven Development (TDD)** principles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Objective
 
-## React Compiler
+To design a secure, testable, and production-ready REST API that handles:
+- User authentication
+- Sweet inventory management
+- Role-based authorization
+- Business logic validation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🧩 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT Authentication
+- Jest (Testing)
+
+---
+
+## 🔐 Authentication
+
+- User Registration & Login
+- JWT-based authentication
+- Protected routes
+- Admin-only operations (delete, restock, update)
+
+---
+
+## 📦 API Endpoints
+
+### Auth
+- `POST /api/auth/register`
+- `POST /api/auth/login`
+
+### Sweets (Protected)
+- `POST /api/sweets` (Admin)
+- `GET /api/sweets`
+- `GET /api/sweets/search`
+- `PUT /api/sweets/:id` (Admin)
+- `DELETE /api/sweets/:id` (Admin)
+
+### Inventory
+- `POST /api/sweets/:id/purchase`
+- `POST /api/sweets/:id/restock` (Admin)
+
+---
+
+## 🧪 Test-Driven Development (TDD)
+
+All major backend logic was developed using **Red → Green → Refactor**:
+
+- Tests written before implementation
+- Meaningful test cases for auth & inventory
+- Edge cases covered
+
+Run tests using:
+```bash
+npm test
+---
+
+## 🌍 Live Backend (Production)
+
+The backend API is deployed on **Render**.
+
+**Base URL:**
+https://sweetshop-backend-1cpk.onrender.com
+
+You can verify the server is running by hitting:
+
+
+---
+
+## ⚙️ Environment Variables
+
+The backend requires the following environment variables:
+
+```env
+MONGO_URI=<MongoDB connection string>
+JWT_SECRET=<JWT secret key>
+PORT=5000
+---
+
+## 🤖 My AI Usage
+
+### AI Tools Used
+- ChatGPT (OpenAI)
+
+
+
+### Reflection
+AI significantly improved development speed and helped unblock issues faster.  
+However, all business logic, authorization rules, data modeling, and architectural decisions were implemented and validated manually.
+
+I treated AI as a **pair programmer**, not a replacement for understanding.
+
